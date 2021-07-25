@@ -4,7 +4,7 @@
 ### Install nvm
     $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
-The script clones the nvm repository to ~/.nvm, and attempts to add the source lines from the snippet below to the correct profile file (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
+The script clones the nvm repository to /.nvm, and attempts to add the source lines from the snippet below to the correct profile file (/.bash_profile, /.zshrc, /.profile, or /.bashrc).
 
     $ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -46,37 +46,37 @@ Now, ghost is running on the LoopBack (lo) interface of the AWS server. if we wa
     output will be
 
 {
-  "url": "http://localhost:2368/",
-  "server": {
-    "port": 2368,
-    "host": "127.0.0.1"
+  "url": "http://localhost:2368/",\
+  "server": {\
+    "port": 2368,\
+    "host": "127.0.0.1"\
   },
-  "database": {
-    "client": "sqlite3",
-    "connection": {
-      "filename": "/home/ubuntu/ghost/content/data/ghost-local.db"
+  "database": {\
+    "client": "sqlite3",\
+    "connection": {\
+      "filename": "/home/ubuntu/ghost/content/data/ghost-local.db"\
     }
   },
-  "mail": {
-    "transport": "Direct"
+  "mail": {\
+    "transport": "Direct"\
   },
-  "logging": {
-    "transports": [
+  "logging": {\
+    "transports": [\
       "file",
-      "stdout"
+      "stdout"\
     ]
   },
-  "process": "local",
-  "paths": {
-    "contentPath": "/home/ubuntu/ghost/content"
+  "process": "local",\
+  "paths": {\
+    "contentPath": "/home/ubuntu/ghost/content"\
   }
 }
 
 we have to change the host to "0.0.0.0"
 
 then stop and start the Ghost again
-$ ghost stop
-$ ghost start
+    $ ghost stop
+    $ ghost start
 
 and now, it is running on http://localhost:2368/ghost/ on the server and
 http://[public-ip]:2368/ from any device
