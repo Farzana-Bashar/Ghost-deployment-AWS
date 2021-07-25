@@ -75,6 +75,7 @@ Now, ghost is running on the LoopBack (lo) interface of the AWS server. if we wa
 we have to change the host to "0.0.0.0"
 
 then stop and start the Ghost again
+
     $ ghost stop
     $ ghost start
 
